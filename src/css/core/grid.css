@@ -1,0 +1,66 @@
+.row {
+  display: flex;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+
+  & .column,
+  & .columns {
+    padding: 0 15px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &.one {
+      width: calc(100 / 12 * 1 * 1%);
+    }
+
+    &.two {
+      width: calc(100 / 12 * 2 * 1%);
+    }
+
+    &.three {
+      width: calc(100 / 12 * 3 * 1%);
+    }
+
+    &.four {
+      width: calc(100 / 12 * 4 * 1%);
+    }
+
+    &.five {
+      width: calc(100 / 12 * 5 * 1%);
+    }
+
+    &.six {
+      width: calc(100 / 12 * 6 * 1%);
+    }
+
+    &.seven {
+      width: calc(100 / 12 * 7 * 1%);
+    }
+
+    &.eight {
+      width: calc(100 / 12 * 8 * 1%);
+    }
+
+    &.nine {
+      width: calc(100 / 12 * 9 * 1%);
+    }
+
+    &.ten {
+      width: calc(100 / 12 * 10 * 1%);
+    }
+
+    &.eleven {
+      width: calc(100 / 12 * 11 * 1%);
+    }
+
+    &.twelve {
+      width: calc(100 / 12 * 12 * 1%);
+    }
+  }
+}

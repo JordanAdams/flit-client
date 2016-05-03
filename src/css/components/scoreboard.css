@@ -1,0 +1,29 @@
+.scoreboard {
+  display: flex;
+  justify-content: center;
+
+  & .side {
+    padding: 0 60px;
+  }
+
+  & .score {
+    font-size: 6em;
+    font-weight: 100;
+    display: block;
+  }
+
+  & .label {
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  & .positive {
+    border-right: solid 2px #eee;
+
+    color: var(--green);
+  }
+
+  & .negative {
+    color: var(--red);
+  }
+}

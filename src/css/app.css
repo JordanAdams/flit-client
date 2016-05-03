@@ -1,0 +1,15 @@
+@import "core/grid";
+@import "core/type";
+@import "core/layout";
+@import "components/scoreboard";
+@import "components/word-graph";
+
+:root {
+  --green: #b2e672;
+  --red: #f96b85;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+}

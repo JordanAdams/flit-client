@@ -1,0 +1,46 @@
+.aligned {
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
+
+.text {
+  &.muted {
+    color: #bbb;
+  }
+
+  &.red {
+    color: var(--red);
+  }
+
+  &.small {
+    font-size: 0.9em;
+  }
+}
+
+body {
+  font: 300 16px 'Roboto', Arial, Sans-Serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 0.25em;
+  line-height: 1;
+  margin: 0;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888;
+}
