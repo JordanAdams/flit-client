@@ -7,23 +7,14 @@ const WordGraph = React.createClass({
     type: React.PropTypes.oneOf(['positive', 'negative']),
     words: React.PropTypes.arrayOf(React.PropTypes.object)
   },
-
-  sortWords(words) {
-    return words.sort((wordA, wordB) => {
-      if (wordA.value === wordB.value) {
-        return 0;
-      }
-
-      return wordA.value < wordB.value ? 1 : -1;
-    });
-  },
-
+  
   createWordElements(words) {
     const upper = words.reduce((acc, word) => {
       return word.value > acc ? word.value : acc;
     }, 0);
 
-    return this.sortWords(words)
+    return sortBy(words, 'value')
+      .reverse()
       .slice(0, 10)
       .map((word, index) => {
         const percentage = (word.value / upper) * 100;

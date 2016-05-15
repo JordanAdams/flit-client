@@ -20,7 +20,7 @@ const Word = ({
     width: percentage + '%'
   };
 
-  return <li style={style}>{toTitleCase(word)} ({value})</li>;
+  return <li style={style}>{toTitleCase(word)}</li>;
 };
 
 Word.displayName = 'Word';

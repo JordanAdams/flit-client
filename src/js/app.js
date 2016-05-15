@@ -1,34 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import debounce from 'lodash.debounce';
 import reducer from './reducer';
 import updatePositive from './actions/update-positive';
 import updateNegative from './actions/update-negative';
-import updatePositiveWords from './actions/update-positive-words';
-import updateNegativeWords from './actions/update-negative-words';
+import updatePositiveWord from './actions/update-positive-word';
+import updateNegativeWord from './actions/update-negative-word';
+import setPositiveWords from './actions/set-positive-words';
+import setNegativeWords from './actions/set-negative-words';
 import socketIO from 'socket.io-client';
 import Home from './pages/Home';
 
 const store = createStore(reducer);
 
 const socket = socketIO('http://localhost:3000');
-socket.on('positive_changed', debounce((data) => {
+socket.on('positive', (data) => {
   store.dispatch(updatePositive(data));
-}), 50);
-
-socket.on('negative_changed', debounce((data) => {
-  store.dispatch(updateNegative(data));
-}), 50);
-
-socket.on('positive_words', (words) => {
-  console.log(words);
-  store.dispatch(updatePositiveWords(words));
 });
 
-socket.on('negative_words', (words) => {
-  store.dispatch(updateNegativeWords(words));
+socket.on('negative', (data) => {
+  store.dispatch(updateNegative(data));
+});
+
+socket.on('words', (words) => {
+  store.dispatch(setPositiveWords(words.positive));
+  store.dispatch(setNegativeWords(words.negative));
+});
+
+socket.on('positive_word', ({word, value}) => {
+  store.dispatch(updatePositiveWord(word, value));
+});
+
+socket.on('negative_word', ({word, value}) => {
+  store.dispatch(updateNegativeWord(word, value));
 });
 
 const render = () => {

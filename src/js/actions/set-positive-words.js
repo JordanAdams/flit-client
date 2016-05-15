@@ -1,6 +1,6 @@
 export default (words) => {
   return {
-    type: 'UPDATE_POSITIVE_WORDS',
+    type: 'SET_POSITIVE_WORDS',
     payload: words
   };
 };

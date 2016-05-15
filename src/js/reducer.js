@@ -7,7 +7,7 @@ const initialState = {
   }
 };
 
-const insertOrUpdateWord = (words, word) => {
+const applyWord = (words, word) => {
   let updated = false;
   const newWords = words.map((w) => {
     if (w.word !== word.word) {
@@ -33,7 +33,25 @@ export default (state = initialState, action) => {
     case 'UPDATE_NEGATIVE':
       return Object.assign({}, state, {negative: action.value});
 
-    case 'UPDATE_POSITIVE_WORDS':
+    case 'UPDATE_POSITIVE_WORD':
+      return {
+        ...state,
+        words: {
+          ...state.words,
+          positive: applyWord(state.words.positive, action.payload)
+        }
+      };
+
+    case 'UPDATE_NEGATIVE_WORD':
+      return {
+        ...state,
+        words: {
+          ...state.words,
+          negative: applyWord(state.words.negative, action.payload)
+        }
+      };
+
+    case 'SET_POSITIVE_WORDS':
       return {
         ...state,
         words: {
@@ -42,7 +60,7 @@ export default (state = initialState, action) => {
         }
       };
 
-    case 'UPDATE_NEGATIVE_WORDS':
+    case 'SET_NEGATIVE_WORDS':
       return {
         ...state,
         words: {

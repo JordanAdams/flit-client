@@ -1,18 +1,18 @@
-import updatePositiveWords from '../../src/js/actions/update-positive-words';
 import test from 'ava';
+import setNegativeWords from '../../src/js/actions/set-negative-words';
 
-test('Creates an UPDATE_POSITIVE_WORDS action', (t) => {
+test('Creates an SET_NEGATIVE_WORDS action', (t) => {
   const words = [
     {word: 'hello', value: 1},
     {word: 'world', value: 2}
   ];
   const action = {
-    type: 'UPDATE_POSITIVE_WORDS',
+    type: 'SET_NEGATIVE_WORDS',
     payload: [
       {word: 'hello', value: 1},
       {word: 'world', value: 2}
     ]
   };
 
-  t.deepEqual(updatePositiveWords(words), action);
+  t.deepEqual(setNegativeWords(words), action);
 });
