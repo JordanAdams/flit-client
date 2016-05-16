@@ -1,5 +1,5 @@
 import React from 'react';
-import sortBy from 'lodash.sortBy';
+import sortBy from 'lodash.sortby';
 import Word from './WordGraph/Word';
 
 const WordGraph = React.createClass({
