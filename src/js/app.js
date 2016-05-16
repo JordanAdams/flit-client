@@ -13,7 +13,7 @@ import Home from './pages/Home';
 
 const store = createStore(reducer);
 
-const socket = socketIO('http://localhost:3000');
+const socket = socketIO(process.env.SOCKET_IO_URL);
 socket.on('positive', (data) => {
   store.dispatch(updatePositive(data));
 });
