@@ -11,11 +11,12 @@
   "author": "Jordan Adams <hi@jordanadams.co.uk>",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
     "lodash.chunk": "^4.0.5",
     "lodash.debounce": "^4.0.6",
     "lodash.sortby": "^4.4.2",
+    "lodash.upperfirst": "^4.2.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "socket.io-client": "^1.4.5"
